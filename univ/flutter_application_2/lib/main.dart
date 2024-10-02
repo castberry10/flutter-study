@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 void main() {
-  runApp(const App());
+  runApp(const App2());
 }
 
 class App extends StatelessWidget {
@@ -21,5 +21,34 @@ class App extends StatelessWidget {
             child: Icon(CupertinoIcons.share),
           ),
         ));
+  }
+}
+
+class App2 extends StatelessWidget {
+  const App2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Material App"),
+        ),
+        body: Material(
+            color: Colors.white,
+            child: Center(
+              child: Ink(
+                  decoration: const ShapeDecoration(
+                    color: Colors.lightBlue,
+                    shape: CircleBorder(),
+                  ),
+                  child: IconButton(
+                    icon: const Icon(Icons.android),
+                    color: Colors.white,
+                    onPressed: () {},
+                  )),
+            )),
+      ),
+    );
   }
 }
