@@ -24,6 +24,9 @@ class MyApp extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: const <Widget>[
               DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
                 child: Text(
                   'Drawer Header',
                   style: TextStyle(
