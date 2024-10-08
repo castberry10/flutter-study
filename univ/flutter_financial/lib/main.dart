@@ -11,14 +11,25 @@ class Financial extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
         home: Scaffold(
-      backgroundColor: Color(0xFF181818),
-      body: Center(
-        child: Text(
-          "abcdefedfad",
-          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
-        ),
-      ),
-    ));
+            backgroundColor: Color(0xFF181818),
+            body: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 80,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Column(
+                        crossAxisAlignment: MainAxisAlignment.end,
+                      )
+                    ],
+                  )
+                ],
+              ),
+            )));
   }
 
   // @override
