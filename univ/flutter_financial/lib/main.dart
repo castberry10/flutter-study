@@ -67,6 +67,7 @@ class Financial extends StatelessWidget {
                     height: 20,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         decoration: BoxDecoration(
@@ -83,9 +84,52 @@ class Financial extends StatelessWidget {
                             style: TextStyle(fontSize: 22),
                           ),
                         ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0xff1F2123),
+                          borderRadius: BorderRadius.circular(45),
+                        ),
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 20,
+                            horizontal: 50,
+                          ),
+                          child: Text(
+                            'Request',
+                            style: TextStyle(
+                              fontSize: 22,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       )
                     ],
-                  )
+                  ),
+                  const SizedBox(height: 100),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "Wallets",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Text(
+                        "View All",
+                        style: TextStyle(
+                          color: Colors.white.withOpacity(0.8),
+                          fontSize: 15,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
             )));
