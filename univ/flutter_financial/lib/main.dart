@@ -15,6 +15,7 @@ class Financial extends StatelessWidget {
             body: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(
                     height: 80,
@@ -39,6 +40,49 @@ class Financial extends StatelessWidget {
                                 fontSize: 18),
                           )
                         ],
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 100,
+                  ),
+                  Text(
+                    "Total Balance",
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.white.withOpacity(0.8),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  const Text(
+                    "\$5 156 192",
+                    style: TextStyle(
+                        fontSize: 42,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w800),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0xffE2B33A),
+                          borderRadius: BorderRadius.circular(45),
+                        ),
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 20,
+                            horizontal: 50,
+                          ),
+                          child: Text(
+                            'Transfer',
+                            style: TextStyle(fontSize: 22),
+                          ),
+                        ),
                       )
                     ],
                   )
