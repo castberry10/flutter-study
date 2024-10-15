@@ -191,7 +191,135 @@ class Financial extends StatelessWidget {
                       ),
                     ),
                   ),
-                  
+                  Transform.translate(
+                    offset: const Offset(0, -20),
+                    child: Container(
+                      clipBehavior: Clip.hardEdge,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(30),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Dollar",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 32,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      '55 622',
+                                      style: TextStyle(
+                                        color: Colors.black.withOpacity(0.8),
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'USD',
+                                      style: TextStyle(
+                                          color: Colors.black.withOpacity(0.8),
+                                          fontSize: 20),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            Transform.scale(
+                                scale: 2.2,
+                                child: Transform.translate(
+                                  offset: const Offset(-5, 12),
+                                  child: const Icon(
+                                    Icons.euro_symbol_outlined,
+                                    Icons.symbol
+                                    color: Color.fromARGB(255, 0, 0, 0),
+                                    size: 88,
+                                  ),
+                                ))
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Transform.translate(
+                    offset: const Offset(0, -40),
+                    child: Container(
+                      clipBehavior: Clip.hardEdge,
+                      decoration: BoxDecoration(
+                        color: const Color(0xff1f2123),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(30),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Euro",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 32,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      '6 428',
+                                      style: TextStyle(
+                                        color: Colors.white.withOpacity(0.8),
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      'EUR',
+                                      style: TextStyle(
+                                          color: Colors.white.withOpacity(0.8),
+                                          fontSize: 20),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            Transform.scale(
+                                scale: 2.2,
+                                child: Transform.translate(
+                                  offset: const Offset(-5, 12),
+                                  child: const Icon(
+                                    Icons.euro_symbol_outlined,
+                                    color: Colors.white,
+                                    size: 88,
+                                  ),
+                                ))
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             )));
