@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './widgets/currency_card.dart';
+import './widgets/button.dart';
 
 void main() {
   runApp(const Financial());
@@ -67,44 +68,19 @@ class Financial extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xffE2B33A),
-                          borderRadius: BorderRadius.circular(45),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 20,
-                            horizontal: 50,
-                          ),
-                          child: Text(
-                            'Transfer',
-                            style: TextStyle(fontSize: 22),
-                          ),
-                        ),
+                      Button(
+                        text: 'Transfer',
+                        color: Color(0xffE2B33A),
+                        textColor: Colors.black,
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xff1F2123),
-                          borderRadius: BorderRadius.circular(45),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 20,
-                            horizontal: 50,
-                          ),
-                          child: Text(
-                            'Request',
-                            style: TextStyle(
-                              fontSize: 22,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      )
+                      Button(
+                        text: 'Request',
+                        color: Color(0xff1F2123),
+                        textColor: Colors.white,
+                      ),
                     ],
                   ),
                   const SizedBox(height: 100),
@@ -131,252 +107,32 @@ class Financial extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  // Container(
-                  //   clipBehavior: Clip.hardEdge,
-                  //   decoration: BoxDecoration(
-                  //     color: const Color(0xff1f2123),
-                  //     borderRadius: BorderRadius.circular(20),
-                  //   ),
-                  //   child: Padding(
-                  //     padding: const EdgeInsets.all(30),
-                  //     child: Row(
-                  //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //       children: [
-                  //         Column(
-                  //           crossAxisAlignment: CrossAxisAlignment.start,
-                  //           children: [
-                  //             const Text(
-                  //               "Euro",
-                  //               style: TextStyle(
-                  //                 color: Colors.white,
-                  //                 fontSize: 32,
-                  //                 fontWeight: FontWeight.w600,
-                  //               ),
-                  //             ),
-                  //             const SizedBox(
-                  //               height: 10,
-                  //             ),
-                  //             Row(
-                  //               children: [
-                  //                 Text(
-                  //                   '6 428',
-                  //                   style: TextStyle(
-                  //                     color: Colors.white.withOpacity(0.8),
-                  //                     fontSize: 20,
-                  //                   ),
-                  //                 ),
-                  //                 const SizedBox(
-                  //                   width: 10,
-                  //                 ),
-                  //                 Text(
-                  //                   'EUR',
-                  //                   style: TextStyle(
-                  //                       color: Colors.white.withOpacity(0.8),
-                  //                       fontSize: 20),
-                  //                 ),
-                  //               ],
-                  //             )
-                  //           ],
-                  //         ),
-                  //         Transform.scale(
-                  //             scale: 2.2,
-                  //             child: Transform.translate(
-                  //               offset: const Offset(-5, 12),
-                  //               child: const Icon(
-                  //                 Icons.euro_symbol_outlined,
-                  //                 color: Colors.white,
-                  //                 size: 88,
-                  //               ),
-                  //             ))
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
-                  // Transform.translate(
-                  //   offset: const Offset(0, -20),
-                  //   child: Container(
-                  //     clipBehavior: Clip.hardEdge,
-                  //     decoration: BoxDecoration(
-                  //       color: Colors.white,
-                  //       borderRadius: BorderRadius.circular(20),
-                  //     ),
-                  //     child: Padding(
-                  //       padding: const EdgeInsets.all(30),
-                  //       child: Row(
-                  //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //         children: [
-                  //           Column(
-                  //             crossAxisAlignment: CrossAxisAlignment.start,
-                  //             children: [
-                  //               const Text(
-                  //                 "Dollar",
-                  //                 style: TextStyle(
-                  //                   color: Colors.black,
-                  //                   fontSize: 32,
-                  //                   fontWeight: FontWeight.w600,
-                  //                 ),
-                  //               ),
-                  //               const SizedBox(
-                  //                 height: 10,
-                  //               ),
-                  //               Row(
-                  //                 children: [
-                  //                   Text(
-                  //                     '55 622',
-                  //                     style: TextStyle(
-                  //                       color: Colors.black.withOpacity(0.8),
-                  //                       fontSize: 20,
-                  //                     ),
-                  //                   ),
-                  //                   const SizedBox(
-                  //                     width: 10,
-                  //                   ),
-                  //                   Text(
-                  //                     'USD',
-                  //                     style: TextStyle(
-                  //                         color: Colors.black.withOpacity(0.8),
-                  //                         fontSize: 20),
-                  //                   ),
-                  //                 ],
-                  //               )
-                  //             ],
-                  //           ),
-                  //           Transform.scale(
-                  //               scale: 2.2,
-                  //               child: Transform.translate(
-                  //                 offset: const Offset(-5, 12),
-                  //                 child: const Icon(
-                  //                   Icons.euro_symbol_outlined,
-                  //                   color: Color.fromARGB(255, 0, 0, 0),
-                  //                   size: 88,
-                  //                 ),
-                  //               ))
-                  //         ],
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
-                  // Transform.translate(
-                  //   offset: const Offset(0, -40),
-                  //   child: Container(
-                  //     clipBehavior: Clip.hardEdge,
-                  //     decoration: BoxDecoration(
-                  //       color: const Color(0xff1f2123),
-                  //       borderRadius: BorderRadius.circular(20),
-                  //     ),
-                  //     child: Padding(
-                  //       padding: const EdgeInsets.all(30),
-                  //       child: Row(
-                  //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //         children: [
-                  //           Column(
-                  //             crossAxisAlignment: CrossAxisAlignment.start,
-                  //             children: [
-                  //               const Text(
-                  //                 "Euro",
-                  //                 style: TextStyle(
-                  //                   color: Colors.white,
-                  //                   fontSize: 32,
-                  //                   fontWeight: FontWeight.w600,
-                  //                 ),
-                  //               ),
-                  //               const SizedBox(
-                  //                 height: 10,
-                  //               ),
-                  //               Row(
-                  //                 children: [
-                  //                   Text(
-                  //                     '6 428',
-                  //                     style: TextStyle(
-                  //                       color: Colors.white.withOpacity(0.8),
-                  //                       fontSize: 20,
-                  //                     ),
-                  //                   ),
-                  //                   const SizedBox(
-                  //                     width: 10,
-                  //                   ),
-                  //                   Text(
-                  //                     'EUR',
-                  //                     style: TextStyle(
-                  //                         color: Colors.white.withOpacity(0.8),
-                  //                         fontSize: 20),
-                  //                   ),
-                  //                 ],
-                  //               )
-                  //             ],
-                  //           ),
-                  //           Transform.scale(
-                  //               scale: 2.2,
-                  //               child: Transform.translate(
-                  //                 offset: const Offset(-5, 12),
-                  //                 child: const Icon(
-                  //                   Icons.euro_symbol_outlined,
-                  //                   color: Colors.white,
-                  //                   size: 88,
-                  //                 ),
-                  //               ))
-                  //         ],
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
                   const CurrencyCard(
-                      name: 'Euro',
-                      code: "EUR",
-                      amount: "6 428",
-                      icon: Icons.euro_symbol_outlined,
-                      isInversted: false),
-                  Transform.translate(
-                    offset: const Offset(0, -20),
-                    child: const CurrencyCard(
-                        name: 'Euro',
-                        code: "EUR",
-                        amount: "6 428",
-                        icon: Icons.euro_symbol_outlined,
-                        isInversted: true),
+                    name: 'Euro',
+                    code: "EUR",
+                    amount: "6 428",
+                    icon: Icons.euro_symbol_outlined,
+                    isInverted: false,
+                    offset: Offset(0, 0),
                   ),
-                  Transform.translate(
-                    offset: const Offset(0, -40),
-                    child: const CurrencyCard(
-                        name: 'Euro',
-                        code: "EUR",
-                        amount: "6 428",
-                        icon: Icons.euro_symbol_outlined,
-                        isInversted: false),
+                  const CurrencyCard(
+                    name: "Dollar",
+                    code: "USD",
+                    amount: "55 622",
+                    icon: Icons.monetization_on_outlined,
+                    isInverted: true,
+                    offset: Offset(0, -20),
+                  ),
+                  const CurrencyCard(
+                    name: "Bitcoin",
+                    code: "BTC",
+                    amount: "28 981",
+                    icon: Icons.currency_bitcoin_outlined,
+                    isInverted: false,
+                    offset: Offset(0, -40),
                   ),
                 ],
               ),
             )));
   }
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //       home: Scaffold(
-  //     backgroundColor: const Color(0xFF181818),
-  //     body: SingleChildScrollView(
-  //       child: Padding(
-  //         padding: const EdgeInsets.symmetric(horizontal: 20),
-  //         child: Column(
-  //           children: [
-  //             const SizedBox(),
-  //             Row(),
-  //             const SizedBox(),
-  //             Text(),
-  //             const SizedBox(),
-  //             const Text(),
-  //             const SizedBox(),
-  //             Row(),
-  //             const SizedBox(),
-  //             Row(),
-  //             const SizedBox(),
-  //             Container(),
-  //             Transform.translate(),
-  //             Transform.translate(),
-  //           ],
-  //         ),
-  //       ),
-  //     ),
-  //   ));
-  // }
 }
