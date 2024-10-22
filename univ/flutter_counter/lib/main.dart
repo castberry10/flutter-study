@@ -43,6 +43,10 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
+    // 위젯의 UI를 생성하는 메소드
+    // 위젯 트리를 반환
+    // 위젯의 상태나 데이터가 변경될떄마다 호출
+    // - 상태가 변경될 때 새로운 위젯트리 생성
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.white,
