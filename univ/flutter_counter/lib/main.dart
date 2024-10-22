@@ -61,6 +61,21 @@ class _AppState extends State<App> {
 // § State 객체가 제거될 때 호출되며 주로 위젯이 트리에서 제거될 때, 더
 // 이상 필요하지 않은 리소스(예: 애니메이션 컨트롤러 등)를 해제하는데
 // 사용
+
+// 빌드의 인자임
+//BuildContext
+// § 위젯 트리 상의 특정 위젯의 위치 및 그 위젯과 관련된 부모 위제들에 대
+// 한 정보가 담긴 객체
+// § BuildContext를 통해 위젯의 상위 위젯과의 관계를 추적하며, 트리 상의
+// 다른 위젯들과 상호작용하거나 데이터를 주고 받을 수 있음
+// BuildContext의 주요 메소드
+// § of() 메소드
+// - 상위 트리에서 특정 데이터를 가져오기 위해 사용
+// § findAncestorWidgetOfExactType<T>()
+// - 특정타입의 부모 위젯 찾기
+// § findAncestorStateOfType<T>()
+// - 특정타입의 State 객체 찾기
+
   @override
   Widget build(BuildContext context) {
     // 위젯의 UI를 생성하는 메소드
@@ -69,33 +84,56 @@ class _AppState extends State<App> {
     // - 상태가 변경될 때 새로운 위젯트리 생성
     print('build 호출');
     return MaterialApp(
-      home: Scaffold(
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(color: Colors.red),
+        ),
+      ),
+      home: const Scaffold(
         backgroundColor: Colors.white,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                "Click count",
-                style: TextStyle(fontSize: 30),
-              ),
-              for (var n in numbers)
-                Text(
-                  '$n',
-                  style: const TextStyle(fontSize: 30),
-                ),
-              // Text(
-              //   "$_counter",
-              //   style: const TextStyle(fontSize: 30),
+              MyLargeTitle()
+              // const Text(
+              //   "Click count",
+              //   style: TextStyle(fontSize: 30),
               // ),
-              IconButton(
-                onPressed: onClick,
-                icon: const Icon(Icons.add),
-                iconSize: 50,
-              ),
+              // for (var n in numbers)
+              //   Text(
+              //     '$n',
+              //     style: const TextStyle(fontSize: 30),
+              //   ),
+              // // Text(
+              // //   "$_counter",
+              // //   style: const TextStyle(fontSize: 30),
+              // // ),
+              // IconButton(
+              //   onPressed: onClick,
+              //   icon: const Icon(Icons.add),
+              //   iconSize: 50,
+              // ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class MyLargeTitle extends StatelessWidget {
+  const MyLargeTitle({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'My Large Title',
+      style: TextStyle(
+        fontSize: 30,
+        color: Theme.of(context).textTheme.titleLarge!.color,
       ),
     );
   }
