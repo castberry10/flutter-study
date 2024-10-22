@@ -35,8 +35,14 @@ class _AppState extends State<App> {
   }
 
   void onClick() {
-    // _counter++;
+    print('onClick 호출');
     setState(() {
+      //상태를 변경하고, 변경된 상태를 UI에 반영하기 위해 호출
+
+      // § setState 메소드를 호출하면 build 메소드가 재실행되어 상태 변경에 따
+      // 라 UI가 갱신
+      //
+      print('setState 호출');
       _counter++;
     });
   }
