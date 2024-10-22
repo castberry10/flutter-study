@@ -20,10 +20,18 @@ class _AppState extends State<App> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    // 처음 한번만 호출
     super.initState();
     _counter = 0;
     print('InitState 호출');
+  }
+
+  @override
+  void didChangeDependencies() {
+    //위젯이 처음 트리에 추가될때,
+    //위젯이 종속성이 변경될 때 호출
+    super.didChangeDependencies();
+    print('didChangeDependencies()');
   }
 
   void onClick() {
