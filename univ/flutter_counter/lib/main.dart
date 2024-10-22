@@ -47,6 +47,17 @@ class _AppState extends State<App> {
     });
   }
 
+//   didUpdateWidget 메소드
+//    § StatefulWidget의 속성 변경을 감지하여 기존 상태를 유지하면서도 새
+//       로운 데이터를 반영하는데 사용
+//    § 호출 시점
+// - 부모 위젯이 자식 위젯을 업데이트할 때 호출
+// - 위젯 인스터스를 변경할 때 호출
+
+// dispose 메소드
+// § State 객체가 제거될 때 호출되며 주로 위젯이 트리에서 제거될 때, 더
+// 이상 필요하지 않은 리소스(예: 애니메이션 컨트롤러 등)를 해제하는데
+// 사용
   @override
   Widget build(BuildContext context) {
     // 위젯의 UI를 생성하는 메소드
