@@ -139,6 +139,12 @@ class _MyLargeTitleState extends State<MyLargeTitle> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    print("myLargeTitle - dispose");
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Text(
       'My Large Title',
