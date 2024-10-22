@@ -16,13 +16,14 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  late int _counter;
-
+  // late int _counter;
+  late List<int> numbers = [];
   @override
   void initState() {
     // 처음 한번만 호출
     super.initState();
-    _counter = 0;
+    // _counter = 0;
+    numbers = [];
     print('InitState 호출');
   }
 
@@ -43,7 +44,9 @@ class _AppState extends State<App> {
       // 라 UI가 갱신
       //
       print('setState 호출');
-      _counter++;
+      // _counter++;
+      numbers.add(numbers.length);
+      print('numbers의 길이: $numbers');
     });
   }
 
@@ -76,10 +79,15 @@ class _AppState extends State<App> {
                 "Click count",
                 style: TextStyle(fontSize: 30),
               ),
-              Text(
-                "$_counter",
-                style: const TextStyle(fontSize: 30),
-              ),
+              for (var n in numbers)
+                Text(
+                  '$n',
+                  style: const TextStyle(fontSize: 30),
+                ),
+              // Text(
+              //   "$_counter",
+              //   style: const TextStyle(fontSize: 30),
+              // ),
               IconButton(
                 onPressed: onClick,
                 icon: const Icon(Icons.add),
