@@ -16,7 +16,15 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  late int _counter = 0;
+  late int _counter;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _counter = 0;
+    print('InitState 호출');
+  }
 
   void onClick() {
     // _counter++;
