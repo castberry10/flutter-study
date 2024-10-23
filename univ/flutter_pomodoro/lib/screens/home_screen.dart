@@ -53,6 +53,14 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
+  void dispose() {
+    if (timer != null) {
+      timer!.cancel(); // 위젯이 파괴될 때 타이머 해제
+    }
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
