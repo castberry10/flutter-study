@@ -12,11 +12,16 @@ class _HomeScreenState extends State<HomeScreen> {
   int totalSeconds = 25 * 60;
   late Timer timer;
   bool isRunning = false;
+  int totalPomodoros = 0;
 
   void onTick(Timer timer) {
-    {
+    if (totalSeconds == 0) {
+      totalPomodoros += 1;
+      isRunning = false;
+      totalSeconds = 1500;
+    } else {
       setState(() {
-        totalSeconds = totalSeconds - 1;
+        totalSeconds -= 1;
       });
     }
   }
@@ -97,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   .color),
                         ),
                         Text(
-                          '0',
+                          '$totalPomodoros',
                           style: TextStyle(
                               fontSize: 60,
                               fontWeight: FontWeight.w600,
