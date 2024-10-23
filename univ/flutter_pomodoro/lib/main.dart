@@ -9,6 +9,19 @@ class Pomodoro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      theme: ThemeData(
+        primaryColor: const Color(0xffe7626c),
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
+            color: Color(0xff232b55),
+          ),
+        ),
+        cardColor: const Color(0xfff3eddb),
+      ),
+      home: const Scaffold(
+        body: Center(),
+      ),
+    );
   }
 }
