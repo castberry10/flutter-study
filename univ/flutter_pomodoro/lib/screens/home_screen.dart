@@ -14,16 +14,19 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           Flexible(
+            flex: 1,
             child: Container(
               decoration: const BoxDecoration(color: Colors.red),
             ),
           ),
           Flexible(
+            flex: 2,
             child: Container(
               decoration: const BoxDecoration(color: Colors.green),
             ),
           ),
           Flexible(
+            flex: 1,
             child: Container(
               decoration: const BoxDecoration(color: Colors.blue),
             ),
