@@ -146,6 +146,7 @@ class _MyLargeTitleState extends State<MyLargeTitle> {
 
   @override
   Widget build(BuildContext context) {
+    print("myLargeTitle - build");
     return Text(
       'My Large Title',
       style: TextStyle(
