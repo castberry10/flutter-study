@@ -29,12 +29,37 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Flexible(
-            flex: 2,
-            child: Container(),
+            flex: 3,
+            child: Center(
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.play_circle_outline),
+                iconSize: 120,
+                color: Theme.of(context).cardColor,
+              ),
+            ),
           ),
           Flexible(
             flex: 1,
-            child: Container(),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).cardColor,
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Pomodoro'),
+                        Text('0'),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
