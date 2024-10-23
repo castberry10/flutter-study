@@ -47,13 +47,31 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Theme.of(context).cardColor,
-                      borderRadius: BorderRadius.circular(50),
+                      // borderRadius: BorderRadius.circular(50),
                     ),
-                    child: const Column(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Pomodoro'),
-                        Text('0'),
+                        Text(
+                          'Pomodoro',
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge!
+                                  .color),
+                        ),
+                        Text(
+                          '0',
+                          style: TextStyle(
+                              fontSize: 60,
+                              fontWeight: FontWeight.w600,
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge!
+                                  .color),
+                        ),
                       ],
                     ),
                   ),
