@@ -18,6 +18,7 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   // late int _counter;
   late List<int> numbers = [];
+  bool showTitle = true;
   @override
   void initState() {
     // 처음 한번만 호출
@@ -47,6 +48,12 @@ class _AppState extends State<App> {
       // _counter++;
       numbers.add(numbers.length);
       print('numbers의 길이: $numbers');
+    });
+  }
+
+  void toggleTitle() {
+    setState(() {
+      showTitle = !showTitle;
     });
   }
 
@@ -89,13 +96,14 @@ class _AppState extends State<App> {
           titleLarge: TextStyle(color: Colors.red),
         ),
       ),
-      home: const Scaffold(
+      home: Scaffold(
         backgroundColor: Colors.white,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              MyLargeTitle()
+              // MyLargeTitle()
+              showTitle ? const MyLargeTitle() : const Text('Nothing'),
               // const Text(
               //   "Click count",
               //   style: TextStyle(fontSize: 30),
