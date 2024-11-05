@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter_webtoon/models/webtoon_model.dart';
 
 class ApiService {
   String baseUrl = "https://tinyurl.com/36hmb9af";
@@ -12,7 +13,13 @@ class ApiService {
         print(response.body);
         List<dynamic> webtoons = jsonDecode(response.body);
         for (var webtoon in webtoons) {
-          print(webtoon);
+          // print(webtoon);
+          final toon = WebtoonModel(
+            id: webtoon['id'],
+            title: webtoon['title'],
+            thumb: webtoon['thumb'],
+          );
+          print(toon);
         }
       }
     } catch (e) {
