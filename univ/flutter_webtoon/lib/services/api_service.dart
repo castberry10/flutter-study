@@ -1,4 +1,5 @@
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class ApiService {
   String baseUrl = "https://tinyurl.com/36hmb9af";
@@ -8,6 +9,10 @@ class ApiService {
     final response = await http.get(url);
     if (response.statusCode == 200) {
       print(response.body);
+      List<dynamic> webtoons = jsonDecode(response.body);
+      for (var webtoon in webtoons) {
+        print(webtoon);
+      }
     }
   }
 }
