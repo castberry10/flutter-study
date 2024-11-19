@@ -2,7 +2,6 @@ import 'package:flutter_webtoon/models/webtoon_detail_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter_webtoon/models/webtoon_model.dart';
-import 'package:f';
 
 class ApiService {
   static String baseUrl = "https://tinyurl.com/36hmb9af";
