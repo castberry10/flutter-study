@@ -49,9 +49,6 @@ class _DetailScreenState extends State<DetailScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 50),
           child: Column(
             children: [
-              // const SizedBox(
-              //   height: 50,
-              // ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -81,7 +78,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 ],
               ),
               const SizedBox(
-                height: 25,
+                height: 10,
               ),
               FutureBuilder(
                 future: webtoon,
@@ -97,7 +94,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           ),
                         ),
                         const SizedBox(
-                          height: 150,
+                          height: 15,
                         ),
                         Text(
                           '${snapshot.data!.genre} / ${snapshot.data!.age}',
@@ -126,7 +123,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       ],
                     );
                   }
-                  return Container();
+                  return const Text("에피소드를 불러오는 중 . .. ");
                 },
               ),
             ],
