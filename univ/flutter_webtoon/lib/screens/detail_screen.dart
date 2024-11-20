@@ -128,9 +128,16 @@ class _DetailScreenState extends State<DetailScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(episode.title),
+                                Text(
+                                  episode.title,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                  ),
+                                ),
                                 const Icon(
                                   Icons.chevron_right_outlined,
+                                  color: Colors.white,
                                 ),
                               ],
                             ),
