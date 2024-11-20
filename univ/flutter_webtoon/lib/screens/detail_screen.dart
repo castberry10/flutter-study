@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webtoon/models/webtoon_detail_model.dart';
 import 'package:flutter_webtoon/services/api_service.dart';
+import 'package:flutter_webtoon/widgets/episode_widget.dart';
 
 class DetailScreen extends StatefulWidget {
   final String title, thumb, id;
@@ -118,29 +119,9 @@ class _DetailScreenState extends State<DetailScreen> {
                     return Column(
                       children: [
                         for (var episode in snapshot.data!)
-                          Container(
-                            margin: const EdgeInsets.only(bottom: 10),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 10),
-                            decoration: BoxDecoration(
-                                color: Colors.green.shade500,
-                                borderRadius: BorderRadius.circular(20)),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  episode.title,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                  ),
-                                ),
-                                const Icon(
-                                  Icons.chevron_right_outlined,
-                                  color: Colors.white,
-                                ),
-                              ],
-                            ),
+                          Episode(
+                            episode: episode,
+                            webtoonId: widget.id,
                           ),
                       ],
                     );
