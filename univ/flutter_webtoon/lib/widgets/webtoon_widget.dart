@@ -14,7 +14,6 @@ class Webtoon extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('teke me home');
         Navigator.push(
           context,
           MaterialPageRoute(
