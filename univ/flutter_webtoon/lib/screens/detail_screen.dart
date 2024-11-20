@@ -117,7 +117,24 @@ class _DetailScreenState extends State<DetailScreen> {
                   if (snapshot.hasData) {
                     return Column(
                       children: [
-                        for (var episode in snapshot.data!) Text(episode.title),
+                        for (var episode in snapshot.data!)
+                          Container(
+                            margin: const EdgeInsets.only(bottom: 10),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 10),
+                            decoration: BoxDecoration(
+                                color: Colors.green.shade500,
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(episode.title),
+                                const Icon(
+                                  Icons.chevron_right_outlined,
+                                ),
+                              ],
+                            ),
+                          ),
                       ],
                     );
                   }
