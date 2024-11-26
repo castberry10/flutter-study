@@ -12,7 +12,7 @@ if (localPropertiesFile.exists()) {
         localProperties.load(reader)
     }
 }
-
+def map_api_key = localProperties.getProperty("google_map_API_KEY")
 def flutterVersionCode = localProperties.getProperty("flutter.versionCode")
 if (flutterVersionCode == null) {
     flutterVersionCode = "1"
@@ -43,6 +43,7 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
+        manifestPlaceholders = [MAP_API_KEY: map_api_key]
     }
 
     buildTypes {
