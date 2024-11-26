@@ -44,6 +44,21 @@ class _DetailScreenState extends State<DetailScreen> {
     initPrefs();
   }
 
+  onHeartTap() async {
+    final likedToons = prefs.getStringList('likedToons');
+    if (likedToons != null) {
+      if (isLiked) {
+        likedToons.remove(widget.id);
+      } else {
+        likedToons.add(widget.id);
+      }
+      await prefs.setStringList('likedToons', likedToons);
+      setState(() {
+        isLiked = !isLiked;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +70,9 @@ class _DetailScreenState extends State<DetailScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.favorite_outline),
+            icon: Icon(
+              isLiked ? Icons.favorite : Icons.favorite_outline,
+            ),
           ),
         ],
         title: Text(
