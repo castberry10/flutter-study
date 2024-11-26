@@ -69,7 +69,7 @@ class _DetailScreenState extends State<DetailScreen> {
         foregroundColor: Colors.green,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: onHeartTap,
             icon: Icon(
               isLiked ? Icons.favorite : Icons.favorite_outline,
             ),
