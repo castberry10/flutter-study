@@ -29,7 +29,9 @@ class _DetailScreenState extends State<DetailScreen> {
     final likedToons = prefs.getStringList('likedToons');
     if (likedToons != null) {
       if (likedToons.contains(widget.id) == true) {
-        isLiked = true;
+        setState(() {
+          isLiked = true;
+        });
       }
     } else {
       await prefs.setStringList('likedToons', []);
@@ -44,19 +46,32 @@ class _DetailScreenState extends State<DetailScreen> {
     initPrefs();
   }
 
+  // onHeartTap() async {
+  //   final likedToons = prefs.getStringList('likedToons');
+  //   if (likedToons != null) {
+  //     if (isLiked) {
+  //       likedToons.remove(widget.id);
+  //     } else {
+  //       likedToons.add(widget.id);
+  //     }
+  //     await prefs.setStringList('likedToons', likedToons);
+  //     setState(() {
+  //       isLiked = !isLiked;
+  //     });
+  //   }
+  // }
   onHeartTap() async {
-    final likedToons = prefs.getStringList('likedToons');
-    if (likedToons != null) {
-      if (isLiked) {
-        likedToons.remove(widget.id);
-      } else {
-        likedToons.add(widget.id);
-      }
-      await prefs.setStringList('likedToons', likedToons);
-      setState(() {
-        isLiked = !isLiked;
-      });
+    final likedToons =
+        List<String>.from(prefs.getStringList('likedToons') ?? []);
+    if (isLiked) {
+      likedToons.remove(widget.id);
+    } else {
+      likedToons.add(widget.id);
     }
+    await prefs.setStringList('likedToons', likedToons);
+    setState(() {
+      isLiked = !isLiked;
+    });
   }
 
   @override
