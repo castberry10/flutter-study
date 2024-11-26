@@ -10,6 +10,8 @@
 .svn/
 migrate_working_dir/
 
+ios/Flutter/GoogleMapsConfig.xcconfig
+
 # IntelliJ related
 *.iml
 *.ipr
