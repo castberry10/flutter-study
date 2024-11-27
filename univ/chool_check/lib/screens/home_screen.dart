@@ -13,11 +13,18 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: renderAppbar(),
-      body: const GoogleMap(
-        initialCameraPosition: CameraPosition(
-          target: univLatLng,
-          zoom: 16,
-        ),
+      body: const Column(
+        children: [
+          Expanded(
+            flex: 2,
+            child: GoogleMap(
+              initialCameraPosition: CameraPosition(
+                target: univLatLng,
+                zoom: 5,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
