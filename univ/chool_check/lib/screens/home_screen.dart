@@ -7,6 +7,19 @@ class HomeScreen extends StatelessWidget {
     37.8690,
     127.7450,
   );
+  static const Marker marker = Marker(
+    markerId: MarkerId('university'),
+    position: univLatLng,
+  );
+
+  static final Circle circle = Circle(
+    circleId: const CircleId('choolCheckCircle'),
+    center: univLatLng,
+    fillColor: Colors.blue.withOpacity(0.5),
+    radius: 100,
+    strokeColor: Colors.blue,
+    strokeWidth: 1,
+  );
 
   const HomeScreen({super.key});
 
@@ -23,16 +36,19 @@ class HomeScreen extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
             }
-            if (snapshot.data == '위치 권한이 허가 되었습니다.') {
+            if (snapshot.data == '위치 권한이 허가되었습니다.') {
               return Column(
                 children: [
-                  const Expanded(
+                  Expanded(
                     flex: 2,
                     child: GoogleMap(
-                      initialCameraPosition: CameraPosition(
+                      initialCameraPosition: const CameraPosition(
                         target: univLatLng,
-                        zoom: 5,
+                        zoom: 16,
                       ),
+                      markers: {marker},
+                      circles: {circle},
+                      myLocationEnabled: true,
                     ),
                   ),
                   Expanded(
