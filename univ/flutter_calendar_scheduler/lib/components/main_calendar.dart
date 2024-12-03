@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:flutter_calendar_scheduler/const/colors.dart';
 
 class MainCalendar extends StatelessWidget {
   const MainCalendar({super.key});
@@ -16,6 +17,13 @@ class MainCalendar extends StatelessWidget {
         titleTextStyle: TextStyle(
           fontWeight: FontWeight.w700,
           fontSize: 16.0,
+        ),
+      ),
+      calendarStyle: CalendarStyle(
+        isTodayHighlighted: false,
+        defaultDecoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6.0),
+          color: LIGHT_GREY_COLOR,
         ),
       ),
     );
