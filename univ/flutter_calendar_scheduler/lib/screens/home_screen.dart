@@ -44,7 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (_) => const ScheduleBottomSheet(),
+            builder: (_) => ScheduleBottomSheet(
+              selectedDate: selectedDate,
+            ),
             isDismissible: true,
             isScrollControlled: true,
           );
