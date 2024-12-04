@@ -46,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
             context: context,
             builder: (_) => const ScheduleBottomSheet(),
             isDismissible: true,
+            isScrollControlled: true,
           );
         },
         backgroundColor: PRIMARY_COLOR,
